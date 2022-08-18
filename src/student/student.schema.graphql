@@ -1,0 +1,33 @@
+scalar Date
+
+type CourseEnrolled {
+    id:           ID!
+    title:        String!
+    description:  String!
+}
+
+type Student {
+    id:         ID!
+    name:       String!
+    age:        Int!
+    email:      String!
+    address:    String!
+    guardian:   String!
+    password:   String
+    course:     CourseEnrolled!
+    createdAt:  Date
+    updatedAt:  Date
+}
+
+type Query {
+    getStudent: Student!
+    getStudents: [Student!]!
+    getStudentsUnderCourse: [Student!]!
+    getStudentsWithAge: [Student!]!
+}
+
+type Mutation {
+    createStudent(id: ID!, name: String!, age: Int!, email: String!, address: String!, guardian: String!, password: String!, course: CourseEnrolled!, createdAt: Date, updatedAt: Date): Student
+    updateStudent(id: ID!, name: String!, age: Int!, email: String!, address: String!, guardian: String!, password: String!, course: CourseEnrolled!,  updatedAt: Date): Student
+    deleteStudent(id: ID!): Student
+}

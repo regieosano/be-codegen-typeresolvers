@@ -1,0 +1,33 @@
+version: "3"
+services:
+  backend-service:
+    container_name: backend-service 
+    image: snapraise/backend-service:latest
+    ports:
+      - '4000:4000'
+    depends_on:
+      - database-service
+    volumes:
+      - .:/backend_service
+      - /backend_service/node_modules
+    command: ["npm", "start"]
+  prisma-studio:
+    container_name: prisma-studio
+    image: snapraise/backend-service:latest
+    ports:
+      - '5555:5555'
+    depends_on:
+      - backend-service
+    command: bash -c 'npx prisma studio'
+  database-service:
+    container_name: database-service
+    image: postgres:9.6
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOST=database-service
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST_AUTH_METHOD=trust

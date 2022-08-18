@@ -1,0 +1,17 @@
+
+type Course {
+    id:           ID!
+    title:        String!
+    description:  String!
+}
+
+type Query {
+    getCourse:   Course!
+    getCourses:  [Course!]!
+}
+
+type Mutation {
+    createCourse(title: String!, description: String!): Course
+    updateCourse(id: ID! title: String!, description: String!): Course
+    deleteCourse(id: ID!): Course
+}
