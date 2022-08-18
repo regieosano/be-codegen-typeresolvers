@@ -3,7 +3,8 @@ export const CourseType = `
      id: String!
      title: String!
      description: String
-  }`;
+   }
+ `;
 
 export const CourseEnrolled = `
   input CourseEnrolled {
