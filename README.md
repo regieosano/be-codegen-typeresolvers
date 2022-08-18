@@ -2,7 +2,7 @@
 # Added TypeResolvers
 
 ## BE Info
-- This is just the same BE Boilerplate as provided by Joseph what I did was to put into folders and sub-folders or in other words I "architectured" it for maintenance and clarity.
+- This is just the same BE Boilerplate as provided by Joseph. What I did was to put it into folders and sub-folders or in other words I "architectured" it for maintenance and clarity.
 
 - There are three (3) Models (samples) in this BE -  Student, Course and User. The models have all the CRUD functionalities and there's a relation between Student and Course. A student is enrolled in a course and a course has many students. One to One and One to Many.
 
