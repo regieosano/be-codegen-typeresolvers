@@ -1,5 +1,5 @@
 # Snap Raise Backend
-
+# Added TypeResolvers
 ## Questions For This App to Demonstrate
 
 - How do I set up a GraphQL server endpoint? (and which libraries should I use)
